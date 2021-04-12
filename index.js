@@ -23,6 +23,7 @@ app.listen(port, ()=>{
 
 
 app.get('/', (req, res)=>{
+    console.log(req.method);
     res.render('pages/index', {blogs:data});
 })
 
@@ -43,9 +44,7 @@ app.get("/post/:id", (req, res)=>{
 
             res.render("pages/post", {post: database[postId]})
 
-
             // res.send(database[postId].title)
-
 
             // database.forEach(post => {
             //     console.log(post.id);
@@ -53,10 +52,20 @@ app.get("/post/:id", (req, res)=>{
             // });
         }
     })
-
-    
-
+})
 
 
+app.get('/new', (req, res)=>{
+    console.log(req.method);
+    res.render('pages/new', {blogs:data});
+})
+
+app.post('/newPost', (req, res)=>{
+    console.log("posting:");
+    console.log(req.body);
+
+    res.send('testing posting')
+
+    // res.redirect('/')
 })
 
