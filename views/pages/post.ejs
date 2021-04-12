@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Post</title>
+</head>
+
+<body>
+    <h1>Post</h1>
+    <h2>Blog:</h2>
+
+
+
+    <h3> <%= post.title %> </h3>
+
+    <img src=<%= `/images${post.url}` %> alt=""%>
+
+    <h4><%= post.body %></h4>
+
+    <p><%= post.author %></p>
+    <h6> <%= post. published_at %></h6>
+    
+
+
+</body>
+
+</html>
