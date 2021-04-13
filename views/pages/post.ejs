@@ -10,20 +10,102 @@
 </head>
 
 <body>
-    <h1>Post</h1>
-    <h2>Blog:</h2>
+
+
+    <div class="new_blog">
+        <a href="/">
+            <h3>Main</h3>
+        </a>
+    </div>
+
+    <div class="topic_title">
+        <h3>
+            <%= post.title %>
+        </h3>
+    </div>
+
+    <section class="topic_wrapper">
+
+        <div>
+            <img src=<%=`/images${post.url}` %> alt=""%>
+        </div>
+
+        <div>
+            <h4>
+                <%= post.body %>
+            </h4>
+            <p>
+                <%= post.author %>
+            </p>
+            <h6>
+                <%= post. published_at %>
+            </h6>
+        </div>
+
+
+    </section>
 
 
 
-    <h3> <%= post.title %> </h3>
 
-    <img src=<%= `/images${post.url}` %> alt=""%>
 
-    <h4><%= post.body %></h4>
+    <div class="recommended">
+        <h3>Other topics:</h3>
+    </div>
 
-    <p><%= post.author %></p>
-    <h6> <%= post. published_at %></h6>
-    
+    <div>
+        <% let newArrayLength=blogs.length %>
+            <% let randomIndex1=(blogs.length-2) %>
+                <% let randomIndex=blogs[Math.floor(Math.random()*blogs.length)]%>
+
+
+                    <% let firstRandom=Math.floor(Math.random()*4) %>
+                        <% let secondRandom=Math.floor(Math.random()*4)+4 %>
+                            <% let thirdRandom=Math.floor(Math.random()*4)+8 %>
+
+                                <% let newArray=[] %>
+                                    <% for( let index=0; index < 3; ++index ) { %>
+
+                                        <% if (firstRandom==post.id) { %>
+                                            <% continue %>
+                                                <% } %>
+
+                                                    <% if (firstRandom !=post.id) { %>
+                                                        <% newArray.push(blogs[firstRandom]) %>
+                                                            <% firstRandom=firstRandom+4 %>
+                                                                <% } %>
+
+                                                                    <% } %>
+
+
+
+
+
+
+    </div>
+
+    <section class="wrapper_all_posts">
+
+
+
+
+        <% newArray.forEach(blog=> { %>
+            <div class="wrapper_post">
+                <a href=<%=`/post/${blog.id}`%>>
+                    <h3>
+                        <%= blog.title %>
+                    </h3>
+                    <img src=<%=`/images${blog.url}` %> alt=""%>
+                    <br>
+                    <p>
+                        <%= blog.author %>
+                    </p>
+
+                </a>
+            </div>
+            <% }) %>
+
+    </section>
 
 
 </body>

@@ -10,8 +10,7 @@
 </head>
 
 <body>
-    <h1>main</h1>
-    <h2>Blogs:</h2>
+    
     <div class="new_blog">
         <a href="/new">
             <h3>Add new BLOG</h3>
@@ -20,20 +19,19 @@
 
     <section class="wrapper_all_posts">
         <% blogs.forEach(blog=> { %>
-
             <div class="wrapper_post">
                 <a href=<%=`/post/${blog.id}`%>>
                     <h3>
                         <%= blog.title %>
                     </h3>
                     <img src=<%=`/images${blog.url}` %> alt=""%>
+                    <br>
                     <p>
                         <%= blog.author %>
                     </p>
+
                 </a>
             </div>
-
-
             <% }) %>
     </section>
 </body>

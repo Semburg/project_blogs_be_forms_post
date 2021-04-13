@@ -42,3 +42,38 @@ img{
     box-shadow: rgba(236, 3, 3, 0.2)  0px 3px 8px;
 }
 
+.recommended{
+    text-align: center;
+}
+
+.topic_wrapper{
+
+    /* display: flex;
+    justify-content: start; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 30px; */
+
+
+    /* align-items: center; */
+    /* width: 99vw; */
+}
+
+.topic_wrapper div{
+    padding-left: 12vw;
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
+
+.topic_wrapper img{
+    display: block;
+    width:500px;
+}
+
+
+
+.topic_title{
+    text-align: center;
+}
